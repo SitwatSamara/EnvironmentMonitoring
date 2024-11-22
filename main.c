@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "api_handler.h"
 #include "alerts.h"
-#include <stdbool.h>
+
 
 // Threshold for triggering an alert (example: temperature threshold)
 #define TEMP_THRESHOLD 35.00
@@ -19,11 +19,11 @@ int main() {
         if (data.temperature > TEMP_THRESHOLD) {
             printf("Sending Notification..\n");
             const char* title="Temperature Alert\n";
-            const char* message= "Temperature has exceeded from its range..\n";
+            const char* message= "Temperature has exceeded from its range.Turn off your system..\n";
             sendAlert(title, message);
             printf("Alert sent successfully!\n");
             }
         }
-        printf("waiting...\n");
+        printf("waiting ...\n");
     return 0;
 }
